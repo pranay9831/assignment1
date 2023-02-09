@@ -1,70 +1,100 @@
-# Getting Started with Create React App
+# Assignment 1
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- _Date Created_: 09 February 2023
+- _Last Modification Date_: 09 February 2023
+- _Lab URL_: https://csci5709-b00932030-a1.netlify.app/
+- _Git URL_: https://git.cs.dal.ca/raycha/csci5709-individual/-/tree/main/assingment1
 
-## Available Scripts
+## Authors
 
-In the project directory, you can run:
+- [Pranay Raycha](pr746594@dal.ca) (pr746594@dal.ca) - B00932030
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Prerequisites
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To have a local copy of this  assignment1  up and running on your local machine, you will first need to install the following software/libraries / plug-ins
 
-### `npm test`
+```
+Node.js
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+See the following section for detailed step-by-step instructions on how to install this software / libraries / plug-ins
 
-### `npm run build`
+### Installing
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Install [Node.js](https://nodejs.org/en/download/) from the following link:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Clone the git repository.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Open the terminal and run the following commands:
 
-### `npm run eject`
+```
+> npm install
+> npm run start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Deployment
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Login to the Github repo and import the Gitlab repo.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. Login to [Netlify](https://app.netlify.com/) and sign in with the Github account.
 
-## Learn More
+3. Import the `csci5709-individual-B00932030` repo.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. Select branch `main` to deploy.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+5. Select build command as `npm run build`.
 
-### Code Splitting
+6. Select publish directory as `build`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+7. Click Deploy Site.
 
-### Analyzing the Bundle Size
+## Built With
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- [Node.js](https://nodejs.org/en/) - JavaScript RTE
+- [React](https://reactjs.org/) - JavaScript Frontend Library
 
-### Making a Progressive Web App
+## Sources Used
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Movie.js
 
-### Advanced Configuration
+_Lines 13-17_
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
+useEffect(() => {
+        fetch(API_URL)
+            .then(res => res.json())
+            .then(data => setMovies(data.results))
+    }, [])
+```
+_Lines 20-25_
 
-### Deployment
+```
+const handleSearch = (e) => {
+        e.preventDefault()
+				fetch(API_SEARCH + term)
+            .then(res => res.json())
+            .then(data => setMovies(data.results))
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```
 
-### `npm run build` fails to minify
+The code was adapted from [CodingDeft.com](https://www.codingdeft.com/posts/react-fetch-data-api/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Acknowledgments
+
+- [Gitlab docs](https://docs.gitlab.com/ee/ci/examples/deployment/index.html#storing-api-keys) for providing _yml_ to deploy code to Heroku
+
+- [React documentation](https://reactjs.org/docs/create-a-new-react-app.html) for guiding how to create first react application
+
+- [The Movie DB] (https://www.themoviedb.org/) for letting use Movie Database API
+
+- [Web Dev Simplified] (https://www.youtube.com/watch?v=SLfhMt5OUPI&t=838s) for learning basics of NavBar
+
+- [Dev Amit jha] (https://www.youtube.com/watch?v=CN0OTAkUD9c) for displaying product catalogue.
+
+- The Professor
+
+- All the TAs of this course
